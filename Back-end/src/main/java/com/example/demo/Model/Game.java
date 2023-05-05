@@ -1,16 +1,19 @@
 package com.example.demo.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonSerialize(using = GameSerializer.class)
 public class Game {
     
     private String title;
     private String thumbnail;
-    private String shortDescription;
-    private String gameUrl;
+    private String short_description;
+    private String game_url;
     private String platform;
-    private String category;
+    
     
     public Game() {
     }
@@ -31,20 +34,20 @@ public class Game {
         this.thumbnail = thumbnail;
     }
 
-    public String getShortDescription() {
-        return shortDescription;
+    public String getShort_description() {
+        return short_description;
     }
 
-    public void setShortDescription(String shortDescription) {
-        this.shortDescription = shortDescription;
+    public void setShort_description(String short_description) {
+        this.short_description = short_description;
     }
 
-    public String getGameUrl() {
-        return gameUrl;
+    public String getGame_url() {
+        return game_url;
     }
 
-    public void setGameUrl(String gameUrl) {
-        this.gameUrl = gameUrl;
+    public void setGame_url(String game_url) {
+        this.game_url = game_url;
     }
 
     public String getPlatform() {
@@ -55,11 +58,5 @@ public class Game {
         this.platform = platform;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
+    
 }
