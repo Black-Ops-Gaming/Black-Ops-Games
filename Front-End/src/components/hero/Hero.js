@@ -19,9 +19,7 @@ const Hero = ({games}) => {
                                     <div className = "game-title">
                                         <h4>{game.title}</h4>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
                     </Paper>
@@ -33,4 +31,4 @@ const Hero = ({games}) => {
   )
 }
 
-export default Hero
+export default Hero;
