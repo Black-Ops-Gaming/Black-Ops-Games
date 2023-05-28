@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import api from './API/axiosConfig';
-import Layout from './components/Layout'
-import {Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout';
+import { Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
 
   const getGames = async () => {
     try {
-      const response = await api.get('/api/games');
+      const response = await api.get('');
       console.log(response.data);
       setGames(response.data);
     } catch (err) {
@@ -24,17 +24,16 @@ function App() {
 
   return (
     <div className="App">
-
       <Routes>
-         <Route path ="/" element= {<Layout/>}>
-          <Route path = "/" element = {<Home games ={games}/>}> </Route>
-
-         </Route>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home games={games} />} />
+        </Route>
       </Routes>
-
     </div>
   );
 }
 
 export default App;
+
+
 
