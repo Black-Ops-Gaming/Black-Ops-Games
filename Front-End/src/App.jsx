@@ -6,11 +6,11 @@ import {Routes, Route } from 'react-router-dom'
 import Home from './components/home/Home';
 
 function App() {
-  const [games, setGames] = useState();
+  const [games, setGames] = useState([]);
 
   const getGames = async () => {
     try {
-      const response = await api.get('/api/games');
+      const response = await api.get('/api');
       console.log(response.data);
       setGames(response.data);
     } catch (err) {
