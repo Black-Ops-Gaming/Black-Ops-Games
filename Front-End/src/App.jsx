@@ -4,6 +4,8 @@ import api from './API/axiosConfig';
 import Layout from './components/Layout'
 import {Routes, Route } from 'react-router-dom'
 import Home from './components/home/Home';
+import 'cors';
+
 
 function App() {
   const [games, setGames] = useState([]);

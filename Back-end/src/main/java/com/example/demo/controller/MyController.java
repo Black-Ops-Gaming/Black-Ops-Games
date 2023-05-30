@@ -12,7 +12,7 @@ import com.example.demo.Model.Game;
 import com.example.demo.service.MyService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class MyController {
 
     @Autowired
