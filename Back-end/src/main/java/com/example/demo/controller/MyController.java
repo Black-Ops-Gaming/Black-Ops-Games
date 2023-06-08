@@ -9,23 +9,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Model.Game;
-
-
+import com.example.demo.service.MyService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class MyController {
-    
+
     @Autowired
-    private com.example.demo.service.MyService myService;
-    
+    private MyService myService;
+
     @GetMapping("/")
     public String home() {
         return "Welcome to the Game Store API!";
     }
 
     @GetMapping("/games")
-    public List<Game> getGames(@RequestParam(required = false) String platform, 
+    public List<Game> getGames(@RequestParam(required = false) String platform,
                                @RequestParam(required = false) String category) {
         if (platform != null) {
             return myService.getGamesByPlatform(platform);
