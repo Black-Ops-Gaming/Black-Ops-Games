@@ -1,6 +1,7 @@
 package com.example.demo.Model;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.springframework.web.reactive.function.client.WebClient;
 
 //import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

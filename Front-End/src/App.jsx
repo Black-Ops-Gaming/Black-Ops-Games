@@ -12,7 +12,7 @@ function App() {
 
   const getGames = async () => {
     try {
-      const response = await api.get('/api');
+      const response = await api.get('/games');
       console.log(response.data);
       setGames(response.data);
     } catch (err) {

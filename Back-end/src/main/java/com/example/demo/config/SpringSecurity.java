@@ -12,6 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 @Configuration
 @EnableWebSecurity
 public class SpringSecurity {
@@ -46,8 +48,8 @@ public class SpringSecurity {
     }*/
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .authorizeRequests((authorize) ->
+        http.csrf(withDefaults())
+                .authorizeHttpRequests((authorize) ->
                         authorize
                                 .antMatchers("/register/**").permitAll()
                                 .antMatchers("/index").permitAll()
